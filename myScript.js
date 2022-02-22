@@ -57,12 +57,17 @@ function buildGrid(){
 
 function enableBox(e){
     if(e.buttons == 1 || e.buttons == 3){
+        let ranColor = Math.floor(Math.random()*16777215).toString(16);
         if (this.classList.contains('enabled')){
-            newColor = shadeRGBColor(this.style.backgroundColor, -0.2);
-            this.style.backgroundColor = newColor;
+            if (this.style.backgroundColor == 'unset'){
+                this.style.backgroundColor = "#" + ranColor;
+            }
+            else {
+                newColor = shadeRGBColor(this.style.backgroundColor, -0.2);
+                this.style.backgroundColor = newColor;
+            }
         }
         else {
-            ranColor = Math.floor(Math.random()*16777215).toString(16);
             this.classList.add('enabled');
             this.style.backgroundColor = "#" + ranColor;
         }
