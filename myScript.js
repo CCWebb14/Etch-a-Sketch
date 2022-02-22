@@ -1,12 +1,21 @@
 let newBox = 0;
 let currentRow = 0;
 
-const container = document.createElement("div");
+const resetHolder = document.createElement("div");
+document.body.appendChild(resetHolder);
+resetHolder.classList.add('resetHolder');
 
+const resetButton = document.createElement("button");
+resetHolder.appendChild(resetButton);
+resetButton.classList.add('resetButton');
+
+resetButton.innerText = "RESET";
+
+const container = document.createElement("div");
 document.body.appendChild(container);
 container.classList.add('container');
 
-let defined_size = 900;
+let defined_size = 25;
 
 let row_size = Math.sqrt(defined_size);
 

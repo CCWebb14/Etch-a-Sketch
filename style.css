@@ -9,27 +9,58 @@ body,html {
     padding: 0;
     font-family: sans-serif;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+
 }
 
+.resetHolder {
+    flex-basis: 100%;
+    display: flex;
+    width: 500px;
+
+    justify-content: center;
+    align-items: center;
+    margin: 50px 50px;
+}
+
+.resetButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 20px;
+    width: 100px;
+    height: 25px;
+    color: #e5e7eb;
+    background-color: #3882F6;
+    border: 2px solid #e5e7eb;
+    border-radius: 5px;
+    padding: 5px 20px;
+}
+
+.resetButton:hover {
+    border: 2px solid #3882F6;
+    background-color: #e5e7eb;
+    color: #3882F6;
+
+}
 
 .container {
     display: flex;
-    height: 75vh;
-    width: 75vh;
+    /* flex: auto; */
+    height: 500px;
+    width: 500px;
 }
 
 .row {
     flex: auto;
-
     display: flex;
     flex-direction: column;
 }
 
 .box {
     flex: auto;
-    /* height: 200px;
-    width: 200px; */
     outline: 1px solid black;
     outline-offset: -1px;
     display: flex;
