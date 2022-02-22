@@ -1,4 +1,9 @@
-const defined_size = prompt("Please enter a square number. Ex. 4, 9, 16...", 64);
+const defined_size = prompt("Please enter a square number. Ex. 4, 9, 16... Max 10 000", 10000);
+
+if(defined_size > 10000){
+    throw new Error('Too large of a size');
+}
+
 
 if(!isInt((Math.sqrt(defined_size)))){
     throw new Error('Non square number entered');
@@ -32,7 +37,8 @@ resetButton.addEventListener('click', resetGrid);
 
 let boxes = document.querySelectorAll('.box');
 
-boxes.forEach(box => box.addEventListener('click', enableBox));
+boxes.forEach(box => box.addEventListener('mouseover', enableBox));
+
 
 function buildGrid(){
     
@@ -49,15 +55,17 @@ function buildGrid(){
     }
 }
 
-function enableBox(){
-    if (this.classList.contains('enabled')){
-        newColor = shadeRGBColor(this.style.backgroundColor, -0.2);
-        this.style.backgroundColor = newColor;
-    }
-    else {
-        ranColor = Math.floor(Math.random()*16777215).toString(16);
-        this.classList.add('enabled');
-        this.style.backgroundColor = "#" + ranColor;
+function enableBox(e){
+    if(e.buttons == 1 || e.buttons == 3){
+        if (this.classList.contains('enabled')){
+            newColor = shadeRGBColor(this.style.backgroundColor, -0.2);
+            this.style.backgroundColor = newColor;
+        }
+        else {
+            ranColor = Math.floor(Math.random()*16777215).toString(16);
+            this.classList.add('enabled');
+            this.style.backgroundColor = "#" + ranColor;
+        }
     }
 }
 
