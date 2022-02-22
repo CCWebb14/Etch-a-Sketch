@@ -70,6 +70,10 @@ body,html {
     color: white;
 }
 
+.enabled {
+    background-color: #3882F6;
+}
+
 .box:hover {
     outline: 1px solid white;
     background-color: #3882F6;
