@@ -1,4 +1,12 @@
-const defined_size = prompt("Please enter a square number. Ex. 4, 9, 16 ...");
+const defined_size = prompt("Please enter a square number. Ex. 4, 9, 16...", 64);
+
+if(!isInt((Math.sqrt(defined_size)))){
+    throw new Error('Non square number entered');
+}
+
+function isInt(n) {
+    return n % 1 === 0;
+}
 
 let newBox = 0;
 let currentRow = 0;
@@ -43,10 +51,7 @@ function buildGrid(){
 
 function enableBox(){
     if (this.classList.contains('enabled')){
-        const rgb2hex = (rgb) => `#${rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/).slice(1).map(n => parseInt(n, 10).toString(16).padStart(2, '0')).join('')}`
-
         newColor = shadeRGBColor(this.style.backgroundColor, -0.2);
-
         this.style.backgroundColor = newColor;
     }
     else {

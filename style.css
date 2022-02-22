@@ -71,7 +71,7 @@ body,html {
 }
 
 .enabled {
-    background-color: #3882F6;
+    color: black;
 }
 
 .box:hover {
