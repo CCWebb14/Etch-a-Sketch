@@ -51,6 +51,7 @@ body,html {
     /* flex: auto; */
     height: 500px;
     width: 500px;
+    border: 2px solid black;
 }
 
 .row {
@@ -61,8 +62,8 @@ body,html {
 
 .box {
     flex: auto;
-    outline: 1px solid black;
-    outline-offset: -1px;
+    /* outline: 1px solid black; */
+    /* outline-offset: -1px; */
     display: flex;
     justify-content: center;
     align-items: center;
