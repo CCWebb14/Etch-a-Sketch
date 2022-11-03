@@ -21,7 +21,7 @@ body,html {
 
     justify-content: center;
     align-items: center;
-    margin: 50px 50px;
+    margin: 25px 0;
 }
 
 .resetButton {
@@ -49,8 +49,8 @@ body,html {
 .container {
     display: flex;
     /* flex: auto; */
-    height: 500px;
-    width: 500px;
+    height: 75vh;
+    width: 75vh;
     border: 2px solid black;
 }
 
@@ -83,5 +83,4 @@ body,html {
 
 .box:hover {
     outline: 1px solid white;
-    background-color: #3882F6;
 }

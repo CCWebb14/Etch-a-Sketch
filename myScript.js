@@ -38,6 +38,7 @@ resetButton.addEventListener('click', resetGrid);
 let boxes = document.querySelectorAll('.box');
 
 boxes.forEach(box => box.addEventListener('mouseover', enableBox));
+boxes.forEach(box => box.addEventListener('click', enableBoxClick));
 
 
 function buildGrid(){
@@ -72,6 +73,25 @@ function enableBox(e){
             this.style.backgroundColor = "#" + ranColor;
         }
     }
+}
+
+function enableBoxClick(e){
+
+    let ranColor = Math.floor(Math.random()*16777215).toString(16);
+    if (this.classList.contains('enabled')){
+        if (this.style.backgroundColor == 'unset'){
+            this.style.backgroundColor = "#" + ranColor;
+        }
+        else {
+            newColor = shadeRGBColor(this.style.backgroundColor, -0.2);
+            this.style.backgroundColor = newColor;
+        }
+    }
+    else {
+        this.classList.add('enabled');
+        this.style.backgroundColor = "#" + ranColor;
+    }
+
 }
 
 // https://github.com/PimpTrizkit/PJs/wiki/12.-Shade,-Blend-and-Convert-a-Web-Color-(pSBC.js)
